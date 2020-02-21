@@ -40,6 +40,8 @@ jobs:
           tar -xzf boost_build_centos7.tar.gz
           rm boost_build_centos7.tar.gz
 
+      - uses: Trass3r/setup-cpp@master
+        
       - name: Run in container
         run: |
           cat /etc/redhat-release
@@ -47,3 +49,4 @@ jobs:
           echo $PWD
           PATH=$PATH:$PWD/boost_build_centos7/bin
           b2 --toolset=gcc -j8
+      
