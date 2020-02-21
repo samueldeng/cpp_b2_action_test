@@ -12,14 +12,16 @@ jobs:
           tar -xzf boost_build_centos7.tar.gz
           rm boost_build_centos7.tar.gz
           export PATH=$PATH:$PWD/boost_build_centos7/bin
-          b2
+          b2 --version
           g++ --versoin
+          ls -la .
 
       - name: Check out repository
         uses: actions/checkout@v2
 
       - name: Run on VM
         run: |
+          ls -la .
           echo This job does not specify a container.
           echo It runs directly on the virtual machine.
   
