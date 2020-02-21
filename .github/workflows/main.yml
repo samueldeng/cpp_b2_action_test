@@ -1,4 +1,4 @@
-name: CI
+name: Docker Test
 
 on: [push]
 
@@ -10,9 +10,13 @@ jobs:
     steps:
     - name: My first step
       uses: docker://centos:7
+
+    - name: checkout
     - uses: actions/checkout@v2
+
     - name: Run a one-line script
       run: echo Hello, world!
+
     - name: Run a multi-line script
       run: |
         echo Add other actions to build,
