@@ -34,9 +34,9 @@ jobs:
 
       - name: install base software
         run: |
-          yum -q install -y wget gcc-c++
+          yum install -y wget gcc-c++
 
-      - name: install base software
+      - name: install b2 software
         run: |
           wget -q https://github.com/samueldeng/boost_build/releases/download/v1.0/boost_build_centos7.tar.gz
           tar -xzf boost_build_centos7.tar.gz
@@ -49,5 +49,3 @@ jobs:
           echo $PWD
           PATH=$PATH:$PWD/boost_build_centos7/bin
           b2
-
-      
