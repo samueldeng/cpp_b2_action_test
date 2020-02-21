@@ -12,7 +12,7 @@ jobs:
       uses: docker://centos:7
 
     - name: checkout
-    - uses: actions/checkout@v2
+      uses: actions/checkout@v2
 
     - name: show os version
       run: cat /etc/redhat-release
