@@ -25,4 +25,6 @@ jobs:
       - name: Run in container
         run: |
           cat /etc/redhat-release
-          echo It runs in the container instead of the VM.
+          ls -la .
+
+      
