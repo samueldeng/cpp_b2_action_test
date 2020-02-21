@@ -20,7 +20,7 @@ project yats
     ;
 variant static_fPIC_release : release : <link>static <cxxflags>-fPIC ;
 
-unittest main
+unit-test main
     :
         main.cpp
     :
