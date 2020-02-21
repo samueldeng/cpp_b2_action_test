@@ -1,0 +1,27 @@
+import modules ;
+import path ;
+import testing ;
+
+path-constant CWD : . ;
+path-constant PROJECT_ROOT : . ;
+
+project yats
+    : requirements
+     <debug-symbols>on
+     <threading>multi
+     <cxxflags>-std=c++11
+     <toolset>gcc:<variant>debug:<cxxflags>--coverage
+     <toolset>gcc:<variant>debug:<linkflags>--coverage
+    : usage-requirements
+      <include>include
+    : default-build debug
+      <link>static
+    : build-dir bin
+    ;
+variant static_fPIC_release : release : <link>static <cxxflags>-fPIC ;
+
+exe main
+    :
+        main.cpp
+    :
+    ;
