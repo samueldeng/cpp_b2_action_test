@@ -12,7 +12,7 @@ jobs:
           tar -xzf boost_build_centos7.tar.gz
           rm boost_build_centos7.tar.gz
           export PATH=$PATH:$PWD/boost_build_centos7/bin
-          b2 --version
+          g++ --version
           ls -la .
 
       - name: Check out repository
