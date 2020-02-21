@@ -27,7 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     container: centos:7.5.1804
     steps:
-        - name: install b2
+      - name: install b2
         run: |
           wget https://github.com/samueldeng/boost_build/releases/download/v1.0/boost_build_centos7.tar.gz
           tar -xzf boost_build_centos7.tar.gz
