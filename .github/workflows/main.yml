@@ -10,8 +10,7 @@ jobs:
         run: |
           wget -q https://github.com/samueldeng/boost_build/releases/download/v1.0/boost_build_centos7.tar.gz
           tar -xzf boost_build_centos7.tar.gz
-          rm boost_build_centos7.tar.gz
-          export PATH=$PATH:$PWD/boost_build_centos7/bin
+          rm boost_build_centos7.tar.gz 
           g++ --version
           ls -la .
 
@@ -21,6 +20,7 @@ jobs:
       - name: Run on VM
         run: |
           ls -la .
+          export PATH=$PATH:$PWD/boost_build_centos7/bin
           b2
           echo This job does not specify a container.
           echo It runs directly on the virtual machine.
@@ -31,7 +31,7 @@ jobs:
     steps:
       - name: install b2
         run: |
-          sudo yum install wget
+          yum install wget
           curl --version
           wget https://github.com/samueldeng/boost_build/releases/download/v1.0/boost_build_centos7.tar.gz
           tar -xzf boost_build_centos7.tar.gz
