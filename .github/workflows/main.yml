@@ -35,10 +35,8 @@ jobs:
           tar -xzf boost_build_centos7.tar.gz
           rm boost_build_centos7.tar.gz
           echo $PWD
-          echo $PATH
           PATH=$PATH:$PWD/boost_build_centos7/bin
           echo $PATH
-          b2 --version
           ls -la .
 
       - name: Check out repository
@@ -48,6 +46,7 @@ jobs:
         run: |
           cat /etc/redhat-release
           ls -la .
+          echo $PWD
           b2
 
       
