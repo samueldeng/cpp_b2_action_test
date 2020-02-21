@@ -3,24 +3,24 @@ name: Docker Test
 on: [push]
 
 jobs:
-  run-on-docker:
-
+  job-vm:
     runs-on: ubuntu-latest
-
     steps:
-    - name: My first step
-      uses: docker://centos:7
+      - run: |
+          echo This job does not specify a container.
+          echo It runs directly on the virtual machine.
+        name: Run on VM
+  
+  job-container:
+    runs-on: ubuntu-latest
+    container: centos:7
+    steps:
+      - run: |
+          echo This job does specify a container.
+          echo It runs in the container instead of the VM.
+        name: Run in container
 
-    - name: checkout
-      uses: actions/checkout@v2
-
-    - name: show os version
-      run: cat /etc/redhat-release
-
-    - name: Run a one-line script
-      run: echo Hello, world!
-
-    - name: Run a multi-line script
-      run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
+      - run: |
+          cat /etc/redhat-release
+          echo It runs in the container instead of the VM.
+        name: Run in container
