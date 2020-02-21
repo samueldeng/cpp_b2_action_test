@@ -13,7 +13,6 @@ jobs:
           rm boost_build_centos7.tar.gz
           export PATH=$PATH:$PWD/boost_build_centos7/bin
           b2 --version
-          g++ --versoin
           ls -la .
 
       - name: Check out repository
@@ -22,6 +21,7 @@ jobs:
       - name: Run on VM
         run: |
           ls -la .
+          b2
           echo This job does not specify a container.
           echo It runs directly on the virtual machine.
   
@@ -35,8 +35,8 @@ jobs:
           tar -xzf boost_build_centos7.tar.gz
           rm boost_build_centos7.tar.gz
           export PATH=$PATH:$PWD/boost_build_centos7/bin
-          b2
-          g++ --versoin
+          b2 --version
+          ls -la .
 
       - name: Check out repository
         uses: actions/checkout@v2
@@ -45,5 +45,6 @@ jobs:
         run: |
           cat /etc/redhat-release
           ls -la .
+          b2
 
       
