@@ -52,8 +52,10 @@ jobs:
 
       - name: install gcc filter
         uses: Trass3r/setup-cpp@master
-        
+        if: always()
+
       - name: build
+        if: always()
         run: |
           cat /etc/redhat-release
           ls -la .
