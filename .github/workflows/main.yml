@@ -46,6 +46,7 @@ jobs:
           tar xzf 1.4.5.tar.gz
 
       - name: cpplint check
+        run: |
           cpplint-1.4.5/cpplint.py --linelength=120 --counting=detailed $(find . -name *.h -or -name *.cpp | grep -vE "^./yats/3rd"/" )
 
 
