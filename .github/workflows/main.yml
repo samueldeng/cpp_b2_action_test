@@ -23,6 +23,11 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v2
+    
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          path: main_src
 
       - name: install b2
         run: |
